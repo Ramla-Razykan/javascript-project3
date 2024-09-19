@@ -8,12 +8,15 @@ function convert() {
         convertMsg.innerText = `Enter a value to convert`;
     }
     else if (from === "fahrenheit" && to === "celsius") {
-        let calc = tempValue * (9 / 5) + 32;
-        convertMsg.innerText = `Converted Tempertaure :   ${calc.toFixed(2)} Celsius`;
+        let calc = (tempValue - 32) * (5 / 9);
+        convertMsg.innerText = `Converted Temperature: ${calc.toFixed(2)} Celsius`;
     }
+    else if (from === "celsius" && to === "fahrenheit") {
+        let calc2 = tempValue * (9 / 5) + 32;
+        convertMsg.innerText = `Converted Temperature: ${calc2.toFixed(2)} Fahrenheit`;
+    } 
     else {
-        let calc2 = (tempValue - 32) * (5 / 9);
-        convertMsg.innerText = `Converted Tempertaure :   ${calc2.toFixed(2)} Fahrenheit`;
+        convertMsg.innerText = `Invalid conversion`;
     }
 }
 
